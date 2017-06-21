@@ -1,11 +1,12 @@
 ---
 layout: 设置
-title: Hexo 免输用户名和密码部署到 github
+title: Hexo 免输用户名和密码部署到 GitHub
 date: 2017-06-17 15:41:17
+categories: 博客搭建
 tags: [Hexo，部署，免密码]
 ---
 ## 通过设置 SSH 使 Hexo 部署时免输入用户名和密码
-每次写完文章，使用 <code>hexo deploy</code> 命令部署 Hexo 到 github 的时候，都要输入用户名和密码，这个过程显得非常繁琐，特别是在用户名和密码比较长的时候。<!--more-->通过网上的一些教程发现，可以使用 SSH 密钥取代默认 https 的认证方式，达到跳过输入用户名和密码的效果。
+每次写完文章，使用 <code>hexo deploy</code> 命令部署 Hexo 到 GitHub 的时候，都要输入用户名和密码，这个过程显得非常繁琐，特别是在用户名和密码比较长的时候。<!--more-->通过网上的一些教程发现，可以使用 SSH 密钥取代默认 https 的认证方式，达到跳过输入用户名和密码的效果。
 
 ## 生成 SSH 密钥
 首先快捷键 <code>Ctrl + Alt + T</code> 打开终端，输入以下命令进入 <code>.ssh</code> 目录
@@ -34,7 +35,7 @@ The key fingerprint is:
 …………………此处是密钥内容…………………… your_email@example.com
 ```
 
-## 设置 Github 中的 SSH keys
+## 设置 GitHub 中的 SSH keys
 这里可以选择在用户设置中添加密钥（Settings –> SSH GPG keys）或者往单个项目中添加密钥。这里以用户设置中添加 SSH 密钥为例。  
 
 - 向用户设置中添加：打开 github 首页，点击右上角的用户头像，选择 <code>Settings</code> 左边找到 <code>SSH and GPG keys</code> ，选择 <code>New SSH key</code> ,将 <code>.ssh</code> 目录下 <code>id_rsa.pub</code> 文件里的全部内容复制进去，点击 <code>Add SSH key</code> 完成密钥的添加。
